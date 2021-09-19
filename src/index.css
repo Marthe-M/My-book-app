@@ -1,0 +1,142 @@
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.header-img {
+  width: 90%;
+}
+
+.header-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5vw;
+}
+
+.centered-below {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.book-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 25px;
+  padding: 0;
+}
+
+.book-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 17%;
+  border-radius: 15px;
+  margin: 10px;
+  box-shadow: 5px 3px 10px #754f075b;
+}
+
+h2,
+h3,
+h4,
+p {
+  text-align: center;
+}
+
+h4,
+p {
+  color: rgb(34, 34, 34);
+  margin: 5px;
+}
+
+p {
+  color: rgb(61, 61, 61);
+}
+
+.favorite-text {
+  background-color: rgb(177, 132, 34);
+  color: rgb(255, 255, 255);
+  border-radius: 5px 0px 0px 5px;
+  padding: 9px;
+  margin: 10px 0px;
+}
+
+input {
+  width: 20vw;
+  padding: 0px 20px;
+  height: 40px;
+  color: #ccc;
+  border: solid white 2px;
+  border-radius: 3px;
+  background: transparent;
+}
+
+.submit-button {
+  cursor: pointer;
+  height: 44px;
+  width: 140px;
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  margin: 5px;
+  font-size: 15px;
+}
+
+.submit-button:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.favorite-button {
+  background: rgba(255, 255, 255, 0.404);
+  width: 50px;
+  border: rgb(177, 132, 34) solid 2px;
+  border-radius: 0px 5px 5px 0px;
+  padding: 6px;
+  margin: 11px 0px;
+}
+
+.favorite-button:hover {
+  cursor: pointer;
+  background: #ebc92f60;
+}
+
+.favorite-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.select-books {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+select {
+  height: 25px;
+}
+
+.line {
+  height: 1px;
+  width: 200px;
+  background-color: rgba(170, 125, 2, 0.493);
+  margin-bottom: 10px;
+}
+
+img {
+  border: rgb(177, 132, 34) solid 2px;
+}
