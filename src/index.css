@@ -1,10 +1,13 @@
 body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  background-image: url("./images/background.jpg");
+  background-repeat: round;
+  margin: 0;
 }
 
 .header-img {
-  width: 90%;
+  width: 100%;
 }
 
 .header-container {
@@ -13,9 +16,13 @@ body {
   color: white;
 }
 
+.select-books {
+  justify-content: space-between;
+}
+
 .centered {
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 2.5vw;
@@ -23,7 +30,7 @@ body {
 
 .centered-below {
   position: absolute;
-  top: 75%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -39,14 +46,16 @@ body {
 }
 
 .book-item {
+  background-color: rgba(214, 198, 166, 0.404);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 17%;
-  border-radius: 15px;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid rgba(77, 49, 8, 0.623);
   margin: 10px;
-  box-shadow: 5px 3px 10px #754f075b;
+  box-shadow: 5px 3px 10px #7a66415b;
 }
 
 h2,
@@ -78,22 +87,24 @@ input {
   width: 20vw;
   padding: 0px 20px;
   height: 40px;
-  color: #ccc;
+  font-size: 18px;
+  color: rgb(82, 82, 82);
   border: solid white 2px;
   border-radius: 3px;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.445);
 }
 
 .submit-button {
   cursor: pointer;
   height: 44px;
-  width: 140px;
+  width: 15vw;
   color: #fff;
   background: transparent;
   border: 2px solid #fff;
   border-radius: 3px;
-  margin: 5px;
+  margin: 15px;
   font-size: 15px;
+  font-weight: bolder;
 }
 
 .submit-button:hover {
@@ -103,10 +114,10 @@ input {
 .favorite-button {
   background: rgba(255, 255, 255, 0.404);
   width: 50px;
-  border: rgb(177, 132, 34) solid 2px;
+  border: rgb(177, 132, 34) solid 1px;
   border-radius: 0px 5px 5px 0px;
   padding: 6px;
-  margin: 11px 0px;
+  margin: 10px 0px;
 }
 
 .favorite-button:hover {
@@ -135,8 +146,4 @@ select {
   width: 200px;
   background-color: rgba(170, 125, 2, 0.493);
   margin-bottom: 10px;
-}
-
-img {
-  border: rgb(177, 132, 34) solid 2px;
 }
