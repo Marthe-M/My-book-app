@@ -14,7 +14,7 @@ const initialState = {
   loading: true,
   error: null,
   showResults: 20,
-  query: 'Tolkien',
+  query: 'Murakami',
   favorites: [],
   showFavorites: false
 }

@@ -66,6 +66,7 @@ export const fetchBooks = () => {
     const searchQuery = state.query
     console.log(searchQuery)
     const apiKey = process.env.REACT_APP_KEY
+    console.log(apiKey)
     fetch(
       'https://www.googleapis.com/books/v1/volumes?q=' +
         searchQuery +

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchBooks } from '../store/actions.js'
-import { StarTwoTone } from '@ant-design/icons'
+import { HeartFilled, BookOutlined } from '@ant-design/icons'
 import { addNewFavorite } from '../store/actions.js'
 
 export default function Bookcontainer () {
@@ -10,14 +10,12 @@ export default function Bookcontainer () {
   const showResults = useSelector(state => state.showResults)
   const favoriteBooks = useSelector(state => state.favorites)
   const showFavorites = useSelector(state => state.showFavorites)
+
   const listItems =
     bookData &&
     bookData
       .map(book => (
         <li key={book.id} className='book-item'>
-          <h4>{book.volumeInfo.title}</h4>
-          <p>{book.volumeInfo.subtitle}</p>
-          <div className='line'></div>
           <img
             src={
               book.volumeInfo.imageLinks === undefined
@@ -26,17 +24,20 @@ export default function Bookcontainer () {
             }
             alt='No book cover available'
           />
+          <div className='book-text'>
+            <h4>
+              <BookOutlined />
+              {book.volumeInfo.title}
+            </h4>
+            <p>{book.volumeInfo.authors[0]}</p>
+          </div>
           <div className='favorite-box'>
-            <h4 className='favorite-text'>Favorite: </h4>
             <button
               type='submit'
               className='favorite-button'
               onClick={() => dispatch(addNewFavorite(book))}
             >
-              <StarTwoTone
-                twoToneColor='#ebc92f'
-                style={{ fontSize: '23px' }}
-              />
+              <HeartFilled className='heart-icon' />
             </button>
           </div>
         </li>
@@ -44,9 +45,6 @@ export default function Bookcontainer () {
       .slice(0, showResults)
   const listFavorites = favoriteBooks.map(book => (
     <li key={book.id} className='book-item'>
-      <h3>{book.volumeInfo.title}</h3>
-      <p>{book.volumeInfo.subtitle}</p>
-
       <img
         src={
           book.volumeInfo.imageLinks === undefined
@@ -55,6 +53,10 @@ export default function Bookcontainer () {
         }
         alt='No book cover available'
       />
+      <div className='book-text'>
+        <h4>{book.volumeInfo.title}</h4>
+        <p>{book.volumeInfo.authors[0]}</p>
+      </div>
     </li>
   ))
 
@@ -64,7 +66,6 @@ export default function Bookcontainer () {
 
   return (
     <div>
-      <h2>Books</h2>
       {showFavorites ? (
         <ul className='book-container'>{listFavorites}</ul>
       ) : (

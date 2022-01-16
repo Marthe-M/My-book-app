@@ -47,35 +47,42 @@ export default function Searchbar () {
             value={query}
             onChange={e => setQuery(e.target.value)}
           />
-          <button type='submit' className='submit-button'>
-            Search
-          </button>
-          <div className='select-books'>
-            <p style={{ color: 'white' }}>How many books to display:</p>
-            <select onChange={e => setNumberResults(e.target.value)}>
-              <option value={10}>10</option>
-              <option value={20} selected='selected'>
-                20
-              </option>
-              <option value={30}>30</option>
-              <option value={40}>40</option>
-            </select>
-          </div>
+
+          <p
+            style={{
+              color: 'white',
+              fontSize: '15px',
+              display: 'inline-flex',
+              marginRight: '10px'
+            }}
+          >
+            Items to display:
+          </p>
+          <select onChange={e => setNumberResults(e.target.value)}>
+            <option value={10}>10</option>
+            <option value={20} selected='selected'>
+              20
+            </option>
+            <option value={30}>30</option>
+            <option value={40}>40</option>
+          </select>
         </form>
-        <button
-          type='submit'
-          className='submit-button'
-          onClick={() => showFavorites()}
-        >
-          Show Favorites
-        </button>
-        <button
-          type='submit'
-          className='submit-button'
-          onClick={() => removeFavorites()}
-        >
-          Remove Favorites
-        </button>
+        <div>
+          <button
+            type='submit'
+            className='submit-button'
+            onClick={() => showFavorites()}
+          >
+            Show Favorites
+          </button>
+          <button
+            type='submit'
+            className='submit-button'
+            onClick={() => removeFavorites()}
+          >
+            Remove Favorites
+          </button>
+        </div>
       </div>
     </div>
   )
